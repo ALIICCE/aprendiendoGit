@@ -3,7 +3,7 @@ from telegram.ext import Application, MessageHandler, filters, CallbackContext, 
 from inicio_bot import busca_arreglo
 #import libreria para comprobar si dice grocerias from ### import ###
 
-TOKEN = "7808605964:AAEs5jqU7FbVrCUUtjUMZu3JVS8gful5Oac"
+TOKEN = "your token"
 
 # Función para responder al comando /start
 async def start(update: Update, context: CallbackContext):
