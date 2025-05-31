@@ -1,9 +1,13 @@
 from telegram import Update
 from telegram.ext import Application, MessageHandler, filters, CallbackContext, CommandHandler
 from inicio_bot import busca_arreglo
-#import libreria para comprobar si dice grocerias from ### import ###
+from dotenv import load_dotenv
+import os
 
-TOKEN = "your token"
+
+load_dotenv()
+token_telegram = os.environ['token_telegram']
+updater = Application.builder().token(token_telegram).build()
 
 # Función para responder al comando /start
 async def start(update: Update, context: CallbackContext):
@@ -18,7 +22,7 @@ async def echo(update: Update, context: CallbackContext):
     await update.message.reply_text(f"You say: {user_text}")
 
 # Configuración del bot
-app = Application.builder().token(TOKEN).build()
+app = Application.builder().token(token_telegram).build()
 
 # Agregar manejadores (Handlers)
 app.add_handler(CommandHandler("start", start))  # Maneja el comando /start
